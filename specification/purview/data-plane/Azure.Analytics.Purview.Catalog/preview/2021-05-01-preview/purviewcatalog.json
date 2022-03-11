@@ -6671,6 +6671,68 @@
       "title": "AtlasTypeDef",
       "description": "The definitions of type."
     },
+    "BulkImportResponse":
+    {
+      "type": "object",
+      "title": "BulkImportResponse",
+      "properties":
+      {
+        "failedImportInfoList":
+        {
+          "readOnly": false,
+          "description": "",
+          "type": "array",
+          "items":
+          {
+            "$ref": "#/definitions/ImportInfo"
+          }
+        },
+        "successImportInfoList":
+        {
+          "readOnly": false,
+          "description": "",
+          "type": "array",
+          "items":
+          {
+            "$ref": "#/definitions/ImportInfo"
+          }
+        }
+      },
+      "example":
+      {
+        "failedImportInfoList":
+        [
+          {
+            "childObjectName": "...",
+            "importStatus": "SUCCESS",
+            "parentObjectName": "...",
+            "remarks": "..."
+          },
+          {
+            "childObjectName": "...",
+            "importStatus": "SUCCESS",
+            "parentObjectName": "...",
+            "remarks": "..."
+          }
+        ],
+        "successImportInfoList":
+        [
+          {
+            "childObjectName": "...",
+            "importStatus": "FAILED",
+            "parentObjectName": "...",
+            "remarks": "..."
+          },
+          {
+            "childObjectName": "...",
+            "importStatus": "FAILED",
+            "parentObjectName": "...",
+            "remarks": "..."
+          }
+        ]
+      },
+      "description": ""
+    },
     "Cardinality": {
       "type": "string",
       "title": "Cardinality",
