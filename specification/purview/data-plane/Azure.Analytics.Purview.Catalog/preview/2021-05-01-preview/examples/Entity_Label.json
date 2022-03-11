@@ -1,0 +1,11 @@
+{
+  "parameters": {
+    "Endpoint": "{Endpoint}",
+    "body": ["label1", "label2"]
+  },
+  "responses": {
+    "204": {
+      "body": {}
+    }
+  }
+}

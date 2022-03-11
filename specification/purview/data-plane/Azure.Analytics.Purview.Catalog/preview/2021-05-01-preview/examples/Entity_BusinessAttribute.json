@@ -1,0 +1,13 @@
+{
+  "parameters": {
+    "Endpoint": "{Endpoint}",
+    "body": {
+        "bizAttr1": "bizAttr1"
+    }
+  },
+  "responses": {
+    "204": {
+      "body": {}
+    }
+  }
+}

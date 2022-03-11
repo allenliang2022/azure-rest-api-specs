@@ -1,0 +1,15 @@
+{
+  "parameters": {
+    "Endpoint": "{Endpoint}",
+    "body": {
+      "myBizMetadata1": {
+        "bizAttr1": "myBizMetaData1.bizAttr1"
+      }
+    }
+  },
+  "responses": {
+    "204": {
+      "body": {}
+    }
+  }
+}

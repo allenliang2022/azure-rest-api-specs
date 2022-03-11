@@ -56,6 +56,9 @@
           },
           "Entity_Update": {
             "$ref": "./examples/Entity_Update.json"
+          },
+          "Entity_AddCustomAttribute": {
+            "$ref": "./examples/Entity_CustomAttribute.json"
           }
         },
         "parameters": [
@@ -950,6 +953,11 @@
         [
           "application/json"
         ],
+        "x-ms-examples": {
+          "Entity_DeleteBusinessMetadata": {
+            "$ref": "./examples/Entity_BusinessMetadata.json"
+          }
+        },
         "parameters": [
           {
             "$ref": "#/parameters/guid"
@@ -988,6 +996,11 @@
         [
           "application/json"
         ],
+        "x-ms-examples": {
+          "Entity_AddOrUpdateBusinessMetadata": {
+            "$ref": "./examples/Entity_BusinessMetadata.json"
+          }
+        },
         "parameters": [
           {
             "$ref": "#/parameters/guid"
@@ -1014,8 +1027,8 @@
           }
         ],
         "responses": {
-          "201": {
-            "description": "Created"
+          "204": {
+            "description": "Success"
           }
         }
       }
@@ -1033,13 +1046,19 @@
         [
           "application/json"
         ],
+        "x-ms-examples": {
+          "Entity_DeleteBusinessAttribute": {
+            "$ref": "./examples/Entity_BusinessAttribute.json"
+          }
+        },
         "parameters":
         [
           {
             "name": "bmName",
             "in": "path",
             "type": "string",
-            "description": "BusinessMetadata name"
+            "description": "BusinessMetadata name",
+            "required": true
           },
           {
             "$ref": "#/parameters/guid"
@@ -1079,13 +1098,19 @@
         [
           "application/json"
         ],
+        "x-ms-examples": {
+          "Entity_AddOrUpdateBusinessAttribute": {
+            "$ref": "./examples/Entity_BusinessAttribute.json"
+          }
+        },
         "parameters":
         [
           {
             "name": "bmName",
             "in": "path",
             "type": "string",
-            "description": "BusinessMetadata name"
+            "description": "BusinessMetadata name",
+            "required": true
           },
           {
             "$ref": "#/parameters/guid"
@@ -1333,6 +1358,11 @@
         [
           "application/json"
         ],
+        "x-ms-examples": {
+          "Entity_DeleteLabel": {
+            "$ref": "./examples/Entity_Label.json"
+          }
+        },
         "parameters":
         [
           {
@@ -1374,6 +1404,11 @@
         [
           "application/json"
         ],
+        "x-ms-examples": {
+          "Entity_SetLabel": {
+            "$ref": "./examples/Entity_Label.json"
+          }
+        },
         "parameters":
         [
           {
@@ -1415,6 +1450,11 @@
         [
           "application/json"
         ],
+        "x-ms-examples": {
+          "Entity_AddLabel": {
+            "$ref": "./examples/Entity_Label.json"
+          }
+        },
         "parameters":
         [
           {
@@ -4725,6 +4765,9 @@
         "x-ms-examples": {
           "Types_CreateTypeDefinitions": {
             "$ref": "./examples/Types_CreateTypeDefinitions.json"
+          },
+          "Types_CreateBusinessMetadata": {
+            "$ref": "./examples/Types_CreateBusinessMetadata.json"
           }
         },
         "parameters": [
@@ -6670,6 +6713,57 @@
       ],
       "title": "AtlasTypeDef",
       "description": "The definitions of type."
+    },
+    "ImportInfo":
+    {
+      "type": "object",
+      "title": "ImportInfo",
+      "properties":
+      {
+        "childObjectName":
+        {
+          "readOnly": false,
+          "description": "",
+          "type": "string"
+        },
+        "importStatus":
+        {
+          "readOnly": false,
+          "$ref": "#/definitions/ImportStatus",
+          "description": ""
+        },
+        "parentObjectName":
+        {
+          "readOnly": false,
+          "description": "",
+          "type": "string"
+        },
+        "remarks":
+        {
+          "readOnly": false,
+          "description": "",
+          "type": "string"
+        }
+      },
+      "example":
+      {
+        "childObjectName": "...",
+        "importStatus": "SUCCESS",
+        "parentObjectName": "...",
+        "remarks": "..."
+      },
+      "description": ""
+    },
+    "ImportStatus":
+    {
+      "type": "string",
+      "title": "ImportStatus",
+      "enum":
+      [
+        "SUCCESS",
+        "FAILED"
+      ],
+      "description": ""
     },
     "BulkImportResponse":
     {
