@@ -61,7 +61,6 @@
                 "isUnique": false,
                 "isIndexable": true,
                 "includeInNotification": false,
-                "searchWeight": -1,
                 "options": {
                   "applicableEntityTypes": "[\"Path\"]",
                   "maxStrLength": "50"
